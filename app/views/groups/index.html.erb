@@ -4,12 +4,14 @@
  <%= link_to "Home", user_path(@user.id), class: "btn btn-primary my-3" %>
 <div id="groups">
   <% @groups.each do |group| %>
+    <div class='card'>
     <%= link_to expenses_path do %>
       <%= render group %>
+   
     <%end%>
     <p>
       <%= link_to "Show this group", group %>
-    </p>
+    </p> </div>
   <% end %>
   <div class="text-center">
     <%= link_to "New group", new_group_path, class: "btn btn-primary w-100" %>

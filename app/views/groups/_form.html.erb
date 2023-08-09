@@ -12,16 +12,16 @@
   <% end %>
 
   <div class="input-group my-2">
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name, class: "form-control" %>
+  
+    <%= form.text_field :name, class: "form-control", placeholder: 'Enter Group Name' %>
   </div>
 
   <div class="input-group my-2">
-    <%= form.label :icon, style: "display: block" %>
-    <%= form.text_field :icon, class: "form-control" %>
+  
+    <%= form.text_field :icon, class: "form-control", placeholder: 'Enter Icon' %>
   </div>
 
-  <div class="input-group my-2">
-    <%= form.submit %>
+  <div class=" my-2">
+    <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>
 <% end %>

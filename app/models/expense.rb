@@ -1,4 +1,5 @@
 class Expense < ApplicationRecord
-  belogns_to :group
+  belongs_to :user
   has_many :group_expenses
+  has_many :groups, through: :group_expenses
 end
