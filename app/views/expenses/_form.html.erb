@@ -11,7 +11,6 @@
     </div>
   <% end %>
 
-
   <div class="input-group my-2">
     <%= form.text_field :name, class: "form-control", placeholder: 'Enter Expense Name' %>
   </div>
@@ -19,6 +18,11 @@
   <div class="input-group my-2">
     <%= form.text_field :amount, class: "form-control", placeholder: 'Enter Amount' %>
   </div>
+
+  <div class="input-group my-2">
+    <%= form.collection_select :group_id, Group.all, :id, :name, { prompt: "Select a Group" }, class: "form-control" %>
+  </div>
+  
   <div class=" my-2">
     <%= form.submit "Submit", class: "btn btn-primary" %>
   </div>

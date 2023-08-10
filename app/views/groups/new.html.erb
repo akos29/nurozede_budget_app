@@ -1,9 +1,10 @@
-<h1>New group</h1>
+<%= link_to groups_path, class: "btn btn-success" do %>
+  <i class="bi bi-arrow-left"></i> Back to groups
+<% end %>
+
+<h1>Add Category</h1>
 
 <%= render "form", group: @group %>
 
 <br>
 
-<div>
-  <%= link_to "Back to groups", groups_path %>
-</div>

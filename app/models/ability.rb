@@ -4,7 +4,8 @@ class Ability
   def initialize(user)
     return unless user.present?
 
-    # user ||= User.new # guest user (not logged in)
+    user ||= User.new # guest user (not logged in)
+    can :read, Expense 
     can :manage, Group, user: user
     can :manage, Expense, user: user
   end

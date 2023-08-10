@@ -8,7 +8,7 @@ class ExpensesController < ApplicationController
 
   def show
     @expense = Expense.find(params[:id])
-    render json: @expense
+    # render json: @expense
   end
 
   def new
