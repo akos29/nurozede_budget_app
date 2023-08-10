@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :authenticate_user!
+  before_action :authenticate_user!, unless: :splash_screen_action?
   protect_from_forgery with: :exception
 
   before_action :update_allowed_parameters, if: :devise_controller?
@@ -21,8 +21,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
-  rescue_from CanCan::AccessDenied do |exception|
-    redirect_to root_url, alert: exception.message
+  private
+
+  def splash_screen_action?
+    params[:controller] == 'pages' && params[:action] == 'splash'
   end
-  
 end
