@@ -15,4 +15,28 @@ RSpec.describe Group, type: :model do
     subject.user = nil
     expect(subject).to be_invalid
   end
+
+  it 'test if transaction has a valid name' do
+    expect(subject).to be_valid
+  end
+
+  it 'test if transaction is invalid without a name' do
+    expect(subject).to be_valid
+    subject.name = nil
+    expect(subject).to be_invalid
+  end
+
+  it 'test if transaction is invalid without a name' do
+    expect(subject).to be_valid
+    subject.name = ''
+    expect(subject).to be_invalid
+  end
+
+  it 'test if transaction is invalid without a name' do
+    expect(subject).to be_valid
+    subject.name = 'sports'
+    expect(subject).to be_valid
+  end
+
+  
 end

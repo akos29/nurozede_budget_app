@@ -19,4 +19,29 @@ RSpec.describe Expense, type: :model do
   it 'test if Expense has a valid amount' do
     expect(subject).to be_valid
   end
+
+  it 'test if Expense is invalid without an amount' do
+    expect(subject).to be_valid
+    subject.amount = nil
+    expect(subject).to be_invalid
+  end
+
+  it 'test if Expense is invalid without an amount' do
+    expect(subject).to be_valid
+    subject.amount = 0
+    expect(subject).to be_invalid
+  end
+
+  it 'test if Expense is invalid without an amount' do
+    expect(subject).to be_valid
+    subject.amount = -1
+    expect(subject).to be_invalid
+  end
+
+  it 'test if Expense is invalid without a amount' do
+    expect(subject).to be_valid
+    subject.amount = 1
+    expect(subject).to be_valid
+  end
+  
 end
