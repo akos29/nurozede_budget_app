@@ -54,13 +54,13 @@ a {
   text-decoration: none;
 }
 
-.btn {
+/* .btn {
   background-color: var(--primary-color);
   color: white;
   padding: 10px 20px;
   border: none;
   cursor: pointer;
-}
+} */
 
 .card {
   background-color: #fff;
@@ -77,3 +77,8 @@ a {
   border-radius: 5px;
 }
 
+.action {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}

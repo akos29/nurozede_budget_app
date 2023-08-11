@@ -6,6 +6,7 @@ class Ability
 
     user ||= User.new # guest user (not logged in)
     can :read, Expense 
+    can :read, Group
     can :manage, Group, user: user
     can :manage, Expense, user: user
   end

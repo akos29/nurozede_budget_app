@@ -1,5 +1,9 @@
 class GroupsController < ApplicationController
   load_and_authorize_resource
+  rescue_from CanCan::AccessDenied do |exception|
+    flash[:alert] = "You are not authorized to proceed with your request."
+    redirect_to root_path # You can redirect to any page you prefer
+  end
   
   def index
     @groups = Group.all

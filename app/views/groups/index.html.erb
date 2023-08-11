@@ -1,7 +1,7 @@
 <p style="color: green"><%= notice %></p>
-
+<%= link_to "Home", user_path(@user.id), class: "btn btn-primary my-3" %>
 <h1 class="text-center text-primary">Categories</h1>
- <%= link_to "Home", user_path(@user.id), class: "btn btn-primary my-3" %>
+ 
 <div id="groups">
   <% @groups.each do |group| %>
     <div class='card'>
@@ -10,7 +10,7 @@
    
     <%end%>
     <p>
-      <%= link_to "Show this group", group %>
+      <%= link_to "Show this Category", group %>
     </p> </div>
   <% end %>
   <div class="text-center">

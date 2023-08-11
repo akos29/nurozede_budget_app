@@ -1,4 +1,4 @@
-<div class="expense-class row" id="<%= dom_id expense %>">
+<div class="expense-class" id="<%= dom_id expense %>">
 
   <div class="col-3"> <img class="icon-image" src="<%= expense.amount %>" alt="expense icon" class="expense-icon mr-3"></div>
   
@@ -9,7 +9,7 @@
 
   <div class="col-2">
     <h4>
-      $2300
+      <%= number_to_currency(expense.amount, unit: "R ") %>
     </h4>
   </div>
 

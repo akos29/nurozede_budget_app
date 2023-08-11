@@ -1,12 +1,10 @@
 class Group < ApplicationRecord
+  has_many :group_expenses, dependent: :destroy
+  has_many :expenses, through: :group_expenses, dependent: :destroy
   belongs_to :user
-  has_many :group_expenses
-  has_many :expenses, through: :group_expenses
 
-  validates :name, presence: true
   validates :user_id, presence: true
-
-  accepts_nested_attributes_for :group_expenses
+  validates_uniqueness_of :name, scope: :user_id, message: ' already exist'
 
   def total_expenses_amount
     expenses.sum(:amount)

@@ -1,11 +1,13 @@
 <p style="color: green"><%= notice %></p>
-
+<%= link_to "Back to expenses", expenses_path %>
+<div class='card'>
 <% if @expense.present? %>
-  <%= render partial: 'user', object: @expense %>
+  <%= render partial: 'expense', object: @expense %>
 <% end %>
-<div>
+<div class='action'>
   <%= link_to "Edit this expense", edit_expense_path(@expense) %> |
-  <%= link_to "Back to expenses", expenses_path %>
 
-  <%= button_to "Destroy this expense", @expense, method: :delete %>
+
+  <%= button_to "Delete", @expense, method: :delete, class: 'btn btn-danger' %>
+</div>
 </div>
