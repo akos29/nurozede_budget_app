@@ -5,9 +5,9 @@ class Ability
     return unless user.present?
 
     user ||= User.new # guest user (not logged in)
-    can :read, Expense 
+    can :read, Expense
     can :read, Group
-    can :manage, Group, user: user
-    can :manage, Expense, user: user
+    can(:manage, Group, user:)
+    can :manage, Expense, user:
   end
 end

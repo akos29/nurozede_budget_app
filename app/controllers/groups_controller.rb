@@ -1,20 +1,18 @@
 class GroupsController < ApplicationController
   load_and_authorize_resource
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = "You are not authorized to proceed with your request."
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:alert] = 'You are not authorized to proceed with your request.'
     redirect_to root_path # You can redirect to any page you prefer
   end
-  
+
   def index
     @groups = Group.all
     @user = current_user
     @amount = @user.expenses.sum(:amount)
-   
   end
 
   def show
     @amount = @group.expenses.sum(:amount)
-  
   end
 
   def new
@@ -41,7 +39,7 @@ class GroupsController < ApplicationController
 
   def update
     @group = Group.find_by_id(params[:id])
-    
+
     if @group.update(group_params)
       redirect_to @group
     else

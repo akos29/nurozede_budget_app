@@ -1,11 +1,11 @@
 class ExpensesController < ApplicationController
   before_action :authenticate_user!
   load_and_authorize_resource
-  rescue_from CanCan::AccessDenied do |exception|
-    flash[:alert] = "You are not authorized to proceed with your request."
+  rescue_from CanCan::AccessDenied do |_exception|
+    flash[:alert] = 'You are not authorized to proceed with your request.'
     redirect_to expenses_path # You can redirect to any page you prefer
   end
-  
+
 
   def index
     @expenses = current_user.expenses.where(group_id: params[:group_id]) if params[:group_id].present?
@@ -34,7 +34,7 @@ class ExpensesController < ApplicationController
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
       end
-      end
+    end
   end
 
   def edit
@@ -55,14 +55,14 @@ class ExpensesController < ApplicationController
 
   def destroy
     @expense.destroy
-    
+
     respond_to do |format|
       format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
-  private 
+  private
 
   def set_expense
     @expense = Expense.find(params[:id])
@@ -76,7 +76,5 @@ class ExpensesController < ApplicationController
     params.require(:expense).permit(:name, :amount, :group_id)
   end
 
-  def group_total_expenses_amount
-    
-  end
+  def group_total_expenses_amount; end
 end
