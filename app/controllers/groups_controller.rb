@@ -8,9 +8,14 @@ class GroupsController < ApplicationController
   def index
     @groups = Group.all
     @user = current_user
+    @amount = @user.expenses.sum(:amount)
+   
   end
 
-  def show;end
+  def show
+    @amount = @group.expenses.sum(:amount)
+  
+  end
 
   def new
     @group = Group.new

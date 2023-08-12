@@ -1,9 +1,13 @@
 <p style="color: green"><%= notice %></p>
 
 <%= link_to "Back", root_path %>
-<h1>Transaction</h1>
+<h1>Transaction </h1>
 
 <div id="expenses">
+  <div class='card'> 
+    <h5>Total Amount:
+    <em><%= number_to_currency(@amount) %></em></h5>
+  </div>
   <% @expenses.each do |expense| %>
   <div class='card'>
     <%= render expense %>

@@ -10,24 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_11_075440) do
+ActiveRecord::Schema[7.0].define(version: 2023_08_12_093252) do
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "expenses", force: :cascade do |t|
     t.string "name"
     t.decimal "amount", precision: 10, scale: 2
     t.date "date"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "group_id"
+    t.bigint "group_id"
     t.index ["group_id"], name: "index_expenses_on_group_id"
     t.index ["user_id"], name: "index_expenses_on_user_id"
   end
 
+  create_table "expenses_groups", id: false, force: :cascade do |t|
+    t.bigint "group_id", null: false
+    t.bigint "expense_id", null: false
+  end
+
   create_table "group_expenses", force: :cascade do |t|
-    t.integer "group_id"
-    t.integer "expense_id"
+    t.bigint "group_id"
+    t.bigint "expense_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.decimal "total_expense_amount"
     t.index ["expense_id"], name: "index_group_expenses_on_expense_id"
     t.index ["group_id"], name: "index_group_expenses_on_group_id"
   end
@@ -35,7 +44,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_11_075440) do
   create_table "groups", force: :cascade do |t|
     t.string "name"
     t.string "icon"
-    t.integer "user_id"
+    t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.decimal "group_total", default: "0.0"

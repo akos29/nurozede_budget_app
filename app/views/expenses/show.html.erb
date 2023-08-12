@@ -1,5 +1,6 @@
-<p style="color: green"><%= notice %></p>
 <%= link_to "Back to expenses", expenses_path %>
+<p style="color: green"><%= notice %></p>
+
 <div class='card'>
 <% if @expense.present? %>
   <%= render partial: 'expense', object: @expense %>

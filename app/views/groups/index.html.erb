@@ -5,7 +5,7 @@
 <div id="groups">
   <% @groups.each do |group| %>
     <div class='card'>
-    <%= link_to expenses_path do %>
+    <%= link_to expenses_path(group_id: group.id) do %>
       <%= render group %>
    
     <%end%>

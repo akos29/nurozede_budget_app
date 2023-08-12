@@ -8,7 +8,10 @@ class ExpensesController < ApplicationController
   
 
   def index
-    @expenses = Expense.all
+    @expenses = current_user.expenses.where(group_id: params[:group_id]) if params[:group_id].present?
+    @group = Group.find(params[:group_id]) if params[:group_id].present?
+
+    @amount = @expenses.sum(:amount)
   end
 
   def show
@@ -65,8 +68,15 @@ class ExpensesController < ApplicationController
     @expense = Expense.find(params[:id])
   end
 
+  def set_group
+    @group = Group.find(params[:group_id])
+  end
+
   def expense_params
     params.require(:expense).permit(:name, :amount, :group_id)
   end
 
+  def group_total_expenses_amount
+    
+  end
 end
