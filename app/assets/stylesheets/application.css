@@ -21,9 +21,9 @@
 }
 
 :root {
-  --primary-color: #3778c2;
-  --secondary-color: #434b54;
-  --success-color: #5fb523;
+  --primary-color: #3778c2 !important;
+  --secondary-color: #434b54 !important;
+  --success-color: #5fb523 !important;
 }
 
 @font-face {
@@ -132,5 +132,9 @@ a {
 .navbar-toggler{
   /* background-color:red; */
   color: #fff;
-  border: 1px solid #fff;
+  border: 0px solid #fff;
+}
+
+.navbar{
+  padding-right:30px;
 }
