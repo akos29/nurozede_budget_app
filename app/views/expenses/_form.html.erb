@@ -1,4 +1,5 @@
 <%= form_with(model: expense) do |form| %>
+<div class='container'>
   <% if expense.errors.any? %>
     <div style="color: red">
       <h2><%= pluralize(expense.errors.count, "error") %> prohibited this expense from being saved:</h2>
@@ -23,7 +24,8 @@
     <%= form.collection_select :group_id, Group.all, :id, :name, { prompt: "Select a Group" }, class: "form-control" %>
   </div>
   
-  <div class=" my-2">
-    <%= form.submit "Submit", class: "btn btn-primary" %>
+  </div>
+  <div class="button-container">
+    <%= form.submit "Save", class: "btn btn custom " %>
   </div>
 <% end %>

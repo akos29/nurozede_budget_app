@@ -56,7 +56,7 @@
 
 - **Expense Tracking**: Keep a record of your expenses to monitor and manage your spending habits effectively.
 
-- **Budget Planning**: Create budgets for various categories and track your spending against those budgets.
+- **Budget Planning**: Create budgets for various Groups and track your spending against those budgets.
 
 - **Transaction Analysis**: Gain insights into your financial patterns with detailed transaction categorization and analysis.
 
