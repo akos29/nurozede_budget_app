@@ -79,8 +79,6 @@ a {
   width: 95%;
 }
 
-
-
 .custom:hover {
   color: #fff;
   background-color: var(--success-color);
@@ -157,3 +155,9 @@ a {
 .navbar{
   padding-right:30px;
 }
+
+.container {
+  min-height: 50vh;
+  padding: 2%;
+}
+

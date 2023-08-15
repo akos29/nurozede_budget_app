@@ -123,8 +123,8 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement all CRUD operations on data**
-- [ ] **Create new types of things and a catch-all object**
+- [ ] **Implement merchant finder**
+- [ ] **Implement Gift card feature**
 
 
 ## 🤝 Contributing <a name="contributing"></a>
@@ -146,7 +146,7 @@ If you like this project...give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank...[@microverse](https://www.microverse.org/)
+I would like to thank [@Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/) for enabling us to use the design. Most of all, I would like to warmly thank [Gregorie Vella on Behance](https://www.behance.net/gregoirevella) for his elegant design.
 
 
 

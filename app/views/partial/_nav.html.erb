@@ -13,7 +13,7 @@
       </svg>
       </a>
       <% end%>
-      <a class="navbar-brand" href="#"><%= params['controller'].upcase=='DEVISE/SESSIONS'? 'LOGIN':  params['controller'].upcase  %> </a>
+      <a class="navbar-brand" href="#"><%= params['controller'].upcase=='DEVISE/SESSIONS'? 'LOGIN': params['controller'].upcase=='DEVISE/REGISTRATIONS' ? 'REGISTER': params['controller'].upcase  %> </a>
       <% if params['controller'].upcase=='DEVISE/SESSIONS' %>
         <%= submit_tag "Log In", type: 'submit',  class: 'btn btn-primary' %>
       <% else%>
