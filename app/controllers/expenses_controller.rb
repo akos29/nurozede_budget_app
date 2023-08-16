@@ -8,10 +8,8 @@ class ExpensesController < ApplicationController
     redirect_to expenses_path # You can redirect to any page you prefer
   end
 
-
   def index
     @expenses = @group.expenses.where(user_id: current_user.id).order('created_at Desc')
-
 
     @total_amount = 0
     # Loop through expenses and tally amounts
