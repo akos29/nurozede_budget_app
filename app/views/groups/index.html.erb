@@ -1,0 +1,27 @@
+<div class='container mt-2'>
+ 
+<div id="groups">
+    <% if @groups.present? %>
+      <% @groups.each do |group| %>
+      <div class='card'>
+      <%= link_to group_expenses_path(group) do %>
+        <%= render group %>
+    <%end%>
+    <p>
+      <%= link_to "Show this Group", group %> 
+    </p> 
+    </div>
+  <% end %>
+    <% else %>
+      <h6 class="text-center card"> <i> Category list is empty </i></h6>
+    <% end %>
+  
+ 
+</div>
+</div> 
+<div class="button-container">
+    <%= link_to "Add a new Group", new_group_path, class: "btn btn custom w-100" %>
+</div>
+<div >
+  <%= button_to "Sign-Out", destroy_user_session_path, method: :delete, class: "btn btn-light w-100"  %>
+</div>

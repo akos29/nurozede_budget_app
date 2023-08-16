@@ -215,3 +215,9 @@ i {
   font-weight: 600;
   display: flex;
 }
+
+h6.text-center {  
+  font-size: 12px !important;
+  color: var(--secondary-color);
+  text-align: justify;
+}
