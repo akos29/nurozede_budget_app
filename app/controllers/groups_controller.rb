@@ -9,8 +9,7 @@ class GroupsController < ApplicationController
     @groups = Group.includes(:expenses).where(user_id: current_user.id)
   end
 
-  def show;
-  end
+  def show; end
 
   def new
     @group = Group.new

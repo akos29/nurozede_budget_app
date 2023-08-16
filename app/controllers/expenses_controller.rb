@@ -10,9 +10,9 @@ class ExpensesController < ApplicationController
 
 
   def index
-    @expenses =  @group.expenses.where(user_id: current_user.id).order('created_at Desc')
+    @expenses = @group.expenses.where(user_id: current_user.id).order('created_at Desc')
 
-  
+
     @total_amount = 0
     # Loop through expenses and tally amounts
     @expenses.each do |expense|
@@ -20,7 +20,7 @@ class ExpensesController < ApplicationController
     end
   end
 
-  def show;  end
+  def show; end
 
   def new
     @expense = Expense.new(group_ids: [params[:group_id]])
@@ -65,6 +65,7 @@ class ExpensesController < ApplicationController
   end
 
   private
+
   def set_expense
     @expense = Expense.find(params[:id])
   end
