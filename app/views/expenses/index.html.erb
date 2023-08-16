@@ -1,10 +1,8 @@
+<div class='card total'> 
+    <p>Total Amount:
+   </p> <em><%= number_to_currency(@amount) %></em>
+</div>
 <div class="container">
-  
-<%= link_to "Back", root_path %>
-<div class='card'> 
-    <h5>Total Amount:
-    <em><%= number_to_currency(@amount) %></em></h5>
-  </div>
   <% @expenses.each do |expense| %>
   <div class='card'>
     <%= render expense %>

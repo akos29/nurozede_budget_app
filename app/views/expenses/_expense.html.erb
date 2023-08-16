@@ -1,15 +1,8 @@
 <div class="expense-class" id="<%= dom_id expense %>">
-
-  <div class="sm"> <img class="icon-image" src="<%= expense.amount %>" alt="expense icon" class="expense-icon mr-3"></div>
-  
-
   <div class="sm">
-    <%= expense.name %>
-  </div>
-
-  <div class="sm">
+   <h3> <%= expense.name %></h3> 
     <h4>
-      <%= number_to_currency(expense.amount, unit: "R ") %>
+     <%= number_to_currency(expense.amount, unit: "R ") %> <i class="bi-wallet2" style="font-size: 2rem;"></i>
     </h4>
   </div>
 
