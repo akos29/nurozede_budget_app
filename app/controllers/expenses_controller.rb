@@ -1,4 +1,6 @@
 class ExpensesController < ApplicationController
+  before_action :set_expense, only: %i[show edit update destroy]
+  before_action :set_group, only: %i[index new create]
   before_action :authenticate_user!
   load_and_authorize_resource
   rescue_from CanCan::AccessDenied do |_exception|
@@ -8,32 +10,32 @@ class ExpensesController < ApplicationController
 
 
   def index
-    @expenses = current_user.expenses.where(group_id: params[:group_id]) if params[:group_id].present?
-    @group = Group.find(params[:group_id]) if params[:group_id].present?
+    @expenses =  @group.expenses.where(user_id: current_user.id).order('created_at Desc')
 
-    @amount = @expenses.sum(:amount)
+  
+    @total_amount = 0
+    # Loop through expenses and tally amounts
+    @expenses.each do |expense|
+      @total_amount += expense.amount
+    end
   end
 
-  def show
-    @expense = Expense.find(params[:id])
-    # render json: @expense
-  end
+  def show;  end
 
   def new
     @expense = Expense.new(group_ids: [params[:group_id]])
   end
 
   def create
-    @expense = current_user.expenses.new(expense_params)
+    @expense = Expense.new(expense_params)
+    @expense.user_id = current_user.id
 
-    respond_to do |format|
-      if @expense.save
-        format.html { redirect_to expense_url(@expense), notice: 'Expense was successfully created.' }
-        format.json { render :show, status: :created, location: @expense }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @expense.errors, status: :unprocessable_entity }
-      end
+    @expense.name = @expense.name.capitalize
+
+    if @expense.save
+      redirect_to group_expenses_path(@group), notice: 'Transaction was successfully created.'
+    else
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -63,7 +65,6 @@ class ExpensesController < ApplicationController
   end
 
   private
-
   def set_expense
     @expense = Expense.find(params[:id])
   end
@@ -72,9 +73,8 @@ class ExpensesController < ApplicationController
     @group = Group.find(params[:group_id])
   end
 
+  # Only allow a list of trusted parameters through.
   def expense_params
-    params.require(:expense).permit(:name, :amount, :group_id)
+    params.require(:expense).permit(:name, :amount, group_ids: [])
   end
-
-  def group_total_expenses_amount; end
 end

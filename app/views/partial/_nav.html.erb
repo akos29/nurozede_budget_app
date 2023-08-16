@@ -2,7 +2,7 @@
       <% if  params['controller'].upcase != 'PAGES' %>
       <nav class="navbar navbar-dark bg-primary"> 
       <%# <div class='container'> %>
-      <% if (params['controller'] == 'groups' || params['controller'] == 'expenses') && params['action'] == 'index' %>
+      <% if params['controller'] == 'groups' && params['action'] == 'index' %>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -26,9 +26,6 @@
           </li>
           <li class="nav-item">
             <%= link_to "Group", groups_path, class: "nav-link" %>
-          </li>
-          <li class="nav-item">
-            <%= link_to "Expenses", expenses_path, class: "nav-link" %>
           </li>
         </ul>
       </div>

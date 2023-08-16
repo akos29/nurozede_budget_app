@@ -1,4 +1,4 @@
-<%= form_with(model: expense) do |form| %>
+<%= form_with(model: expense, url: group_expenses_path) do |form| %>
 <div class='container'>
   <% if expense.errors.any? %>
     <div style="color: red">
@@ -21,7 +21,12 @@
   </div>
 
   <div class="input-group my-2">
-    <%= form.collection_select :group_id, Group.all, :id, :name, { prompt: "Select a Group" }, class: "form-control" %>
+    <% current_user.groups.each do |group| %>
+      <div class='category'>
+      <%= check_box_tag "expense[group_ids][]", group.id, @expense.group_ids.include?(group.id) %>
+      <%= form.label group.name, class: "category" %>
+      </div>
+    <% end %>
   </div>
   
   </div>

@@ -6,13 +6,10 @@ class GroupsController < ApplicationController
   end
 
   def index
-    @groups = Group.all
-    @user = current_user
-    @amount = @user.expenses.sum(:amount)
+    @groups = Group.includes(:expenses).where(user_id: current_user.id)
   end
 
-  def show
-    @amount = @group.expenses.sum(:amount)
+  def show;
   end
 
   def new

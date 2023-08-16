@@ -200,3 +200,18 @@ i {
   font-weight: 600;
 }
 
+.category {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 1rem;
+  color: var(--secondary-color);
+  text-align: justify;
+  width: 100%;
+  padding: 2px 10px;
+}
+
+.category .eachbox {
+  font-weight: 600;
+  display: flex;
+}
