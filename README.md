@@ -62,7 +62,12 @@
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
 
+> Add a link to your deployed project.
+
+- [Live Demo Link](https://budgetapp-h8vp.onrender.com)
+- [Live Demo Video](https://www.loom.com/share/54ee61f0ee2c4fd484b148f76c9d2e5f?sid=82bac7a6-300a-428c-8e53-154b4bdadab8)
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -131,7 +136,7 @@ To run tests, run the following command:
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/studiosnabeel/RubyCapstoneProject/issues).
+Feel free to check the [issues page]( ).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
