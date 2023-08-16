@@ -64,8 +64,6 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-> Add a link to your deployed project.
-
 - [Live Demo Link](https://budgetapp-h8vp.onrender.com)
 - [Live Demo Video](https://www.loom.com/share/54ee61f0ee2c4fd484b148f76c9d2e5f?sid=82bac7a6-300a-428c-8e53-154b4bdadab8)
 
@@ -158,5 +156,3 @@ I would like to thank [@Creative Commons](https://creativecommons.org/licenses/b
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._
