@@ -64,7 +64,7 @@
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://budgetapp-h8vp.onrender.com)
+- [Live Demo Link](https://budgetapp-h8vp.onrender.com/)
 - [Live Demo Video](https://www.loom.com/share/54ee61f0ee2c4fd484b148f76c9d2e5f?sid=82bac7a6-300a-428c-8e53-154b4bdadab8)
 
 
