@@ -240,7 +240,7 @@ i {
   font-size: 1rem;
   color: var(--secondary-color);
   text-align: justify;
-  padding: .5rem 1rem;
+  padding: 0.5rem 1rem;
 }
 
 .total em {
