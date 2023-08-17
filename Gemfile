@@ -49,7 +49,6 @@ gem 'devise'
 
 gem 'cancancan'
 
-
 gem 'image_processing', '~> 1.2'
 # Use Sass to process CSS
 # gem "sassc-rails"
