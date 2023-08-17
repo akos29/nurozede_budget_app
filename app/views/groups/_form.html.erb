@@ -22,6 +22,10 @@
   
     <%= form.text_field :icon, class: "form-control", placeholder: 'Enter Icon' %>
   </div>
+  <div class="input-group my-2">
+    <%= form.label :icon_image %>
+    <%= form.file_field :icon_image, class: "form-control" %>
+  </div>
 </div>
   <div class="button-container">
     <%= form.submit "Save", class: "btn btn custom " %>

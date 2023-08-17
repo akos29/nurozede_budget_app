@@ -1,6 +1,6 @@
 <div class='card total'> 
   <p>Total Amount:</p>
-  <em><%= number_to_currency(@total_amount) %></em>
+  <em><%= number_to_currency(@total_amount, unit: "R ") %></em>
 </div>
 <div class="container">
   <% if @expenses.present? %>

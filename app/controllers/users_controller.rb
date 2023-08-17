@@ -39,7 +39,11 @@ class UsersController < ApplicationController
     @user.destroy
 
     respond_to do |format|
-      format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      if @user.destroy
+        format.html { redirect_to users_url, notice: 'User was successfully destroyed.' }
+      else
+        format.html { redirect_to users_url, notice: 'User was not destroyed.' }
+      end
       format.json { head :no_content }
     end
   end
@@ -51,6 +55,6 @@ class UsersController < ApplicationController
   end
 
   def user_params
-    params.require(:user).permit(:name, :email, :password)
+    params.require(:user).permit(:name, :email, :password, :main_image)
   end
 end

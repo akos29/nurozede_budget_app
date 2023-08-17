@@ -45,7 +45,7 @@ class ExpensesController < ApplicationController
     respond_to do |format|
       if @expense.update(expense_params)
         format.html { redirect_to expense_url(@expense), notice: 'Exspence successfully updated.' }
-        format.json { render :show, status: :ok, location: @expense }
+        format.json { render :index, status: :ok, location: @expense }
       else
         format.html { render :edit, status: :unprocessable_entity }
         format.json { render json: @expense.errors, status: :unprocessable_entity }
@@ -57,7 +57,11 @@ class ExpensesController < ApplicationController
     @expense.destroy
 
     respond_to do |format|
-      format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      if @expense.destroy
+        format.html { redirect_to expenses_url, notice: 'Expense was successfully destroyed.' }
+      else
+        format.html { redirect_to expenses_url, notice: 'Expense was not destroyed.' }
+      end
       format.json { head :no_content }
     end
   end

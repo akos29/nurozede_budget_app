@@ -20,7 +20,10 @@
   <div class="input-group my-2">
     <%= f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control", placeholder: 'Enter confirmation password' %>
   </div>
-
+    <%= f.file_field :main_image,lass: "form-control",placeholder: 'Upload your avtar' %>
+  <div class="input-group my-2">
+    
+    </div>
   <div class="button-container ">
     <%= f.submit "Sign up" , class: "btn btn custom" %>
   </div>

@@ -1,15 +1,17 @@
-<div id="<%= dom_id(group) %>">
-
-   
-    <div class="icons">
-    <i class="bi-<%= group.icon %>"></i>
-  </div>
-  <div class="group-list-item">
-    <h3><%= group.name %></h3>
-     <% if group.present?%>
-    <p>View your Total spending</p>
+<div class='card-container'>
+  
+    <% if group.present?%>
+      <% if group.icon_image.present? %>
+        <%= image_tag group.icon_image.variant(resize_to_limit: [100, nil]) %>
+      <% end %>
+        
+      <div class="group-list-item">
+        <p class='title' ><%= group.name %></p>
+        <p class='date'> <%= group.created_at.strftime('%e %B %Y') %></p>
+      </div>
+      <p>View your Total spending</p>
     <% else %>
-    <h3>You haven't spend anything on this category yet</h3>
-  <% end %>
-  </div>
+      <h3>You haven't spend anything on this category yet</h3>
+    <% end %>
+    
 </div>
