@@ -1,0 +1,16 @@
+<div class="card-container" id="<%= dom_id expense %>">
+  <% if @group.present?%>
+      <% if @group.icon_image.present? %>
+        <%= image_tag @group.icon_image.variant(resize_to_limit: [100, nil]) %>
+    <% end %>
+    <div class="group-list-item">
+      <p class='title' > <%= expense.name %></p> 
+      <p class="date"> <%= expense.created_at.strftime('%e %B %Y') %></p>
+    </div>
+      <div class="price">
+        <%= number_to_currency(expense.amount, unit: "R ") %>
+      </div>
+  <% else %>
+    <h3>You haven't spend anything on this category yet</h3>
+  <% end %>
+</div>

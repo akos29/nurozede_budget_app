@@ -56,13 +56,16 @@
 
 - **Expense Tracking**: Keep a record of your expenses to monitor and manage your spending habits effectively.
 
-- **Budget Planning**: Create budgets for various categories and track your spending against those budgets.
+- **Budget Planning**: Create budgets for various Groups and track your spending against those budgets.
 
 - **Transaction Analysis**: Gain insights into your financial patterns with detailed transaction categorization and analysis.
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+## 🚀 Live Demo <a name="live-demo"></a>
 
+- [Live Demo Link](https://budgetapp-h8vp.onrender.com/)
+- [Live Demo Video](https://www.loom.com/share/be5e2f9ed5ec47e8bf8e2aeb1b389298?sid=96b1875d-516c-4890-b6c7-658cce4cee06)
 
 
 ## 💻 Getting Started <a name="getting-started"></a>
@@ -123,15 +126,15 @@ To run tests, run the following command:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **Implement all CRUD operations on data**
-- [ ] **Create new types of things and a catch-all object**
+- [ ] **Implement merchant finder**
+- [ ] **Implement Gift card feature**
 
 
 ## 🤝 Contributing <a name="contributing"></a>
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/studiosnabeel/RubyCapstoneProject/issues).
+Feel free to check the [issues page]( ).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -146,12 +149,10 @@ If you like this project...give it a ⭐️!
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-We would like to thank...[@microverse](https://www.microverse.org/)
+I would like to thank [@Creative Commons](https://creativecommons.org/licenses/by-nc/4.0/) for enabling us to use the design. Most of all, I would like to warmly thank [Gregorie Vella on Behance](https://www.behance.net/gregoirevella) for his elegant design.
 
 
 
 ## 📝 License <a name="license"></a>
 
 This project is [MIT](./MIT.md) licensed.
-
-_NOTE: we recommend using the [MIT license](https://choosealicense.com/licenses/mit/) - you can set it up quickly by [using templates available on GitHub](https://docs.github.com/en/communities/setting-up-your-project-for-healthy-contributions/adding-a-license-to-a-repository). You can also use [any other license](https://choosealicense.com/licenses/) if you wish._

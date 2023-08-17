@@ -1,0 +1,22 @@
+<div class='card total'> 
+  <p>Total Amount:</p>
+  <em><%= number_to_currency(@total_amount, unit: "R ") %></em>
+</div>
+<div class="container">
+  <% if @expenses.present? %>
+    <% @expenses.each do |expense| %>
+      <div class='card'>
+        <%= render expense %>
+      </div>
+    <% end %>
+  <% else %>
+    <h3 class="text-center">No Transactions Yet</h3>
+  <% end %>
+</div>  
+
+<div class="button-container">
+  <%= link_to "New Transaction", new_group_expense_path, class: "btn btn custom w-100" %>
+</div>
+<div class="text-center">
+  <%= button_to "Sign Out", destroy_user_session_path, method: :delete, class: "btn btn-light w-100 my-3"  %>
+</div>

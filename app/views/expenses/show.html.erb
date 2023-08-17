@@ -1,0 +1,15 @@
+<div class='container'>
+<%= link_to "Back to expenses", expenses_path %>
+
+<div class='card'>
+<% if @expense.present? %>
+  <%= render partial: 'expense', object: @expense %>
+<% end %>
+<div class='action'>
+  <%= link_to "Edit this expense", edit_expense_path(@expense) %> |
+
+
+  <%= button_to "Delete", @expense, method: :delete, class: 'btn btn-danger' %>
+</div>
+</div>
+</div>
