@@ -67,18 +67,18 @@ p {
 }
 
 .title {
-  font-size: .75rem;
+  font-size: 0.75rem;
   font-weight: 500;
   text-transform: capitalize;
 }
 
 .date {
-  font-size: .7rem;
+  font-size: 0.7rem;
   font-weight: 400;
   text-transform: capitalize;
-  opacity: .7;
-  margin: 0!important;
-  padding: 0!important;
+  opacity: 0.7;
+  margin: 0 !important;
+  padding: 0 !important;
 }
 
 .button-container {
