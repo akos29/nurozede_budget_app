@@ -5,14 +5,14 @@ class ExpensesController < ApplicationController
   load_and_authorize_resource
   rescue_from CanCan::AccessDenied do |_exception|
     flash[:alert] = 'You are not authorized to proceed with your request.'
-    redirect_to expenses_path # You can redirect to any page you prefer
+    redirect_to expenses_path 
   end
 
   def index
     @expenses = @group.expenses.where(user_id: current_user.id).order('created_at Desc')
 
     @total_amount = 0
-    # Loop through expenses and tally amounts
+    
     @expenses.each do |expense|
       @total_amount += expense.amount
     end

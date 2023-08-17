@@ -236,9 +236,11 @@ i {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   font-size: 1rem;
   color: var(--secondary-color);
   text-align: justify;
+  padding: .5rem 1rem;
 }
 
 .total em {
